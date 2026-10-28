@@ -1421,6 +1421,23 @@ section {
 .project-card {
     padding: 40px;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.proj-badges-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
 }
 
 .proj-badge {
@@ -1434,7 +1451,80 @@ section {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 16px;
+}
+
+.proj-live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 30px;
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.proj-live-badge:hover {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: rgba(16, 185, 129, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.live-dot {
+    width: 7px;
+    height: 7px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #10b981;
+    display: inline-block;
+    animation: livePulse 2s infinite;
+}
+
+@keyframes livePulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.proj-title-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.proj-title-link:hover {
+    color: var(--accent-color);
+}
+
+.proj-title-link .title-icon {
+    font-size: 16px;
+    opacity: 0.6;
+    transition: var(--transition);
+}
+
+.proj-title-link:hover .title-icon {
+    opacity: 1;
+    transform: translate(2px, -2px);
+    color: var(--accent-color);
 }
 
 .project-card h3 {
@@ -1495,6 +1585,28 @@ section {
 
 .project-card:hover .proj-tech-stack span {
     border-color: rgba(255, 255, 255, 0.1);
+}
+
+.proj-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+    flex-wrap: wrap;
+}
+
+.btn-red {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(255, 75, 92, 0.3);
+    font-weight: 600;
+}
+
+.btn-red:hover {
+    background-color: var(--accent-secondary);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 75, 92, 0.5);
 }
 
 /* Experience Section */
